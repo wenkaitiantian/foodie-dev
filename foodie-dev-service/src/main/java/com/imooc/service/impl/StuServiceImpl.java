@@ -8,6 +8,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * 事务
+ *
+ */
 
 @Service
 public class StuServiceImpl implements StuService {
@@ -41,5 +45,31 @@ public class StuServiceImpl implements StuService {
     public void deleteStu(int id) {
         stuMapper.deleteByPrimaryKey(id);
 
+    }
+
+    @Override
+    public void saveParent() {
+        stu.setName("test");
+        stu.setAge(24);
+        stuMapper.insert(stu);
+    }
+    @Transactional(propagation = Propagation.SUPPORTS)
+
+    @Override
+    public void saveChildren() {
+    saveChild1();
+    int a = 1/0;
+    saveChild2();
+    }
+
+    private void saveChild1() {
+        stu.setName("test1");
+        stu.setAge(25);
+        stuMapper.insert(stu);
+    }
+    private void saveChild2() {
+        stu.setName("test2");
+        stu.setAge(26);
+        stuMapper.insert(stu);
     }
 }
