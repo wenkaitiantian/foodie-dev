@@ -11,6 +11,10 @@
 
     <artifactId>foodie-dev-mapper</artifactId>
     <dependencies>
+        <!--
+            service -> mapper -> pojo -> common
+            service可以使用pojo与common中相应的方法的
+        -->
         <dependency>
             <groupId>com.imooc</groupId>
             <artifactId>foodie-dev-pojo</artifactId>

@@ -4,14 +4,20 @@
     <data-source source="LOCAL" name="foodie_shop_dev@localhost" uuid="fa7e8bb3-3492-4682-be8f-1dfe727dba6e">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/foodie_shop_dev</jdbc-url>
     </data-source>
     <data-source source="LOCAL" name="tacu@test-mysql.c0hlxmo7hgzy.ap-southeast-1.rds.amazonaws.com" uuid="21a6be6f-f5cd-4107-90a1-7ac7fd8cd557">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://test-mysql.c0hlxmo7hgzy.ap-southeast-1.rds.amazonaws.com:3306/tacu</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="chat@chat-1.cluster-cctywwfodhja.ap-northeast-1.rds.amazonaws.com" uuid="ab4a835a-cf19-40fc-8633-0a2ce20f50fa">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://chat-1.cluster-cctywwfodhja.ap-northeast-1.rds.amazonaws.com:3306/chat</jdbc-url>
     </data-source>
   </component>
 </project>
