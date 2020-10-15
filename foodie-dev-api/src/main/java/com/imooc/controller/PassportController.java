@@ -44,7 +44,7 @@ public class PassportController {
 
     @ApiOperation(value = "用户注册", notes = "用户名注册", httpMethod = "POST")
     @PostMapping("/regist")
-    public IMOOCJSONResult result(@RequestBody UserBO userBO  , HttpServletRequest request
+    public IMOOCJSONResult result(@RequestBody UserBO userBO, HttpServletRequest request
             , HttpServletResponse response) {
         String username = userBO.getUsername();
         String password = userBO.getPassword();
@@ -69,11 +69,12 @@ public class PassportController {
 
         //4、实现注册
         Users userResult = userService.createUser(userBO);
-        userResult=setNullProperty(userResult);
-        CookieUtils.setCookie(request,response,"user"
-                , JsonUtils.objectToJson(userResult),true);
+        userResult = setNullProperty(userResult);
+        CookieUtils.setCookie(request, response, "user"
+                , JsonUtils.objectToJson(userResult), true);
         return IMOOCJSONResult.ok();
     }
+
     @ApiOperation(value = "用户登陆", notes = "用户登陆", httpMethod = "POST")
     @PostMapping("/login")
     public IMOOCJSONResult login(@RequestBody UserBO userBO
@@ -94,15 +95,25 @@ public class PassportController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if (userResult==null){
+        if (userResult == null) {
             return IMOOCJSONResult.errorMsg("用户名或密码错误");
         }
-        userResult=setNullProperty(userResult);
-        CookieUtils.setCookie(request,response,"user"
-                , JsonUtils.objectToJson(userResult),true);
+        userResult = setNullProperty(userResult);
+
+        CookieUtils.setCookie(request, response, "user"
+                , JsonUtils.objectToJson(userResult), true);
         return IMOOCJSONResult.ok(userResult);
     }
-    private Users setNullProperty(Users userResult ){
+
+    @ApiOperation(value = "用户退出", notes = "用户退出", httpMethod = "POST")
+    @PostMapping("/logout")
+    public IMOOCJSONResult logout(@RequestParam String userId, HttpServletRequest request
+            , HttpServletResponse response) {
+        CookieUtils.deleteCookie(request,response,"user");
+        return IMOOCJSONResult.ok();
+    }
+
+    private Users setNullProperty(Users userResult) {
         userResult.setPassword(null);
         userResult.setMobile(null);
         userResult.setEmail(null);
