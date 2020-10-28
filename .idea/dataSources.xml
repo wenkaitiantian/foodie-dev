@@ -19,5 +19,23 @@
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://chat-1.cluster-cctywwfodhja.ap-northeast-1.rds.amazonaws.com:3306/chat</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="im-token@wallet-dog.cluster-cipyprd4gazj.ap-northeast-1.rds.amazonaws.com" uuid="071b7954-5c86-45e7-a6ed-79fb668a44d3">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://wallet-dog.cluster-cipyprd4gazj.ap-northeast-1.rds.amazonaws.com:3306/im-token</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="im-token@wallet-dog-instance-1.cipyprd4gazj.ap-northeast-1.rds.amazonaws.com" uuid="c3d2fcec-74df-40f1-aae7-0839ba83e352">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://wallet-dog-instance-1.cipyprd4gazj.ap-northeast-1.rds.amazonaws.com:3306/im-token</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="fdg-token@wallet-dog.cluster-cipyprd4gazj.ap-northeast-1.rds.amazonaws.com" uuid="415a63f5-1692-48c2-b650-7ef127017121">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://wallet-dog.cluster-cipyprd4gazj.ap-northeast-1.rds.amazonaws.com:3306/fdg-token</jdbc-url>
+    </data-source>
   </component>
 </project>
